@@ -1,21 +1,18 @@
 package com.tutorial;
 
-import com.tutorial.collections.CollectionsDemo;
-import com.tutorial.generics.GenericsList;
-import com.tutorial.interfaces.Printer;
+import com.tutorial.lambdas.Printer;
 import com.tutorial.lambdas.ConsolePrinter;
-import com.tutorial.models.Customer;
-import com.tutorial.models.EmailComparator;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        greet(new ConsolePrinter());;
+        greet(new Printer() {
+            @Override
+            public void print(String message) {
+                System.out.println("Hello world");
+            }
+        });;
     }
     public static void greet(Printer printer){
         printer.print("Hello world");
