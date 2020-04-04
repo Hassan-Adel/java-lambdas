@@ -2,6 +2,7 @@ package com.tutorial.lambdas;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class LambdasDemo {
 
@@ -12,6 +13,12 @@ public class LambdasDemo {
     }
 
     public void print(String msg){}
+
+    public static void supplier(){
+        Supplier<Double> getRandom = ()->Math.random();
+        var random = getRandom.get();
+        System.out.println(random);
+    }
 
     public static void chainingConsumers(){
         List<String> stringList = List.of("a","b","c","d","e");
