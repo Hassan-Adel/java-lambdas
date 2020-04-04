@@ -2,6 +2,7 @@ package com.tutorial.lambdas;
 
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class LambdasDemo {
@@ -13,6 +14,12 @@ public class LambdasDemo {
     }
 
     public void print(String msg){}
+
+    public static void functionInterface(){
+        Function<String, Integer> map = str -> str.length();
+        var length = map.apply("test");
+        System.out.println(length);
+    }
 
     public static void supplier(){
         Supplier<Double> getRandom = ()->Math.random();
