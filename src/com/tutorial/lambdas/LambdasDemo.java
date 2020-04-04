@@ -15,6 +15,21 @@ public class LambdasDemo {
 
     public void print(String msg){}
 
+    public static void composeFunctions(){
+        //"key:value"
+        //first: "key=value"
+        //second: "{key=value}"
+        Function<String, String> replaceColon= str -> str.replace(":", "=");
+        Function<String, String> addBraces = str -> "{" + str + "}";
+        //Declarative programming
+        var result  = replaceColon
+                .andThen(addBraces)
+                .apply("key:value");
+        //reversed
+        result = addBraces.compose(replaceColon).apply("key:value");
+        System.out.println(result);
+    }
+
     public static void functionInterface(){
         Function<String, Integer> map = str -> str.length();
         var length = map.apply("test");
