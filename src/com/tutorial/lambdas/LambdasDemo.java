@@ -19,7 +19,7 @@ public class LambdasDemo {
         greet(System.out::println);
 
         //using objects
-        var demo = new LambdasDemo();
+        var demo = new LambdasDemo("test");
         greet(message -> demo.print(message));
         greet(demo::print);
 
