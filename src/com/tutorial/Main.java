@@ -4,6 +4,8 @@ import com.tutorial.lambdas.LambdasDemo;
 import com.tutorial.lambdas.Printer;
 import com.tutorial.lambdas.ConsolePrinter;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -30,6 +32,10 @@ public class Main {
         Printer printer = message -> System.out.println("Hello world");
 
         LambdasDemo.show();
+
+        //consumer interface
+        List<Integer> intList = List.of(1,2,3,4,5,6,7);
+        intList.forEach(i -> System.out.println(i));
 
         greet(new Printer() {
             @Override
