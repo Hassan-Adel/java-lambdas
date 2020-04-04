@@ -1,5 +1,8 @@
 package com.tutorial.lambdas;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 public class LambdasDemo {
 
     private String msg;
@@ -9,6 +12,13 @@ public class LambdasDemo {
     }
 
     public void print(String msg){}
+
+    public static void chainingConsumers(){
+        List<String> stringList = List.of("a","b","c","d","e");
+        Consumer<String> print = item -> System.out.println(item);
+        Consumer<String> printUpperCase = item -> System.out.println(item.toUpperCase());
+        stringList.forEach(print.andThen(printUpperCase).andThen(print));
+    }
 
     public static void show(){
         var prefix = "-";

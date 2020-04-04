@@ -37,6 +37,8 @@ public class Main {
         List<Integer> intList = List.of(1,2,3,4,5,6,7);
         intList.forEach(i -> System.out.println(i));
 
+        LambdasDemo.chainingConsumers();
+
         greet(new Printer() {
             @Override
             public void print(String message) {
