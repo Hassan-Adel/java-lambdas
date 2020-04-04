@@ -13,6 +13,13 @@ public class LambdasDemo {
 
     public void print(String msg){}
 
+    public void unaryOperator(){
+        UnaryOperator<Integer>  square= n -> n*n;
+        UnaryOperator<Integer> increment = n -> n+1;
+        var result = square.andThen(increment).apply(1);
+        System.out.println(result);
+    }
+
     public static void binaryOperation(){
         //a,b -> a+b -> square
         BinaryOperator<Integer> add = (a,b) -> a+b;
