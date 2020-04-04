@@ -3,6 +3,7 @@ package com.tutorial.lambdas;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class LambdasDemo {
@@ -15,6 +16,10 @@ public class LambdasDemo {
 
     public void print(String msg){}
 
+    public static void predicateInterface(){
+        Predicate<String> isLongerThanFive = str -> str.length() > 5;
+        System.out.println(isLongerThanFive.test("str"));
+    }
     public static void composeFunctions(){
         //"key:value"
         //first: "key=value"
