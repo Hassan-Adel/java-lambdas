@@ -16,6 +16,17 @@ public class LambdasDemo {
 
     public void print(String msg){}
 
+    public static void combinePredicates(){
+        Predicate<String> hasLeftBrace = str -> str.startsWith("{");
+        Predicate<String> hasRightBrace = str -> str.endsWith("}");
+        // && || !
+        Predicate<String> hasLeftAndRightBrace = hasLeftBrace.and(hasRightBrace);
+        Predicate<String> hasLeftOrRightBrace = hasLeftBrace.or(hasRightBrace);
+        Predicate<String> hasNoLeftBrace = hasLeftBrace.negate();
+        //usage
+        hasLeftAndRightBrace.test("{key:value}");
+    }
+
     public static void predicateInterface(){
         Predicate<String> isLongerThanFive = str -> str.length() > 5;
         System.out.println(isLongerThanFive.test("str"));
