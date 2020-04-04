@@ -1,10 +1,7 @@
 package com.tutorial.lambdas;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class LambdasDemo {
 
@@ -16,6 +13,13 @@ public class LambdasDemo {
 
     public void print(String msg){}
 
+    public static void binaryOperation(){
+        //a,b -> a+b -> square
+        BinaryOperator<Integer> add = (a,b) -> a+b;
+        Function<Integer, Integer> square = a-> a*a;
+        var result = add.andThen(square).apply(1, 2);
+        System.out.println(result);
+    }
     public static void combinePredicates(){
         Predicate<String> hasLeftBrace = str -> str.startsWith("{");
         Predicate<String> hasRightBrace = str -> str.endsWith("}");
