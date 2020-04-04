@@ -1,5 +1,6 @@
 package com.tutorial;
 
+import com.tutorial.lambdas.LambdasDemo;
 import com.tutorial.lambdas.Printer;
 import com.tutorial.lambdas.ConsolePrinter;
 
@@ -27,6 +28,8 @@ public class Main {
 
         //add lambda expression to a parameter
         Printer printer = message -> System.out.println("Hello world");
+
+        LambdasDemo.show();
 
         greet(new Printer() {
             @Override
